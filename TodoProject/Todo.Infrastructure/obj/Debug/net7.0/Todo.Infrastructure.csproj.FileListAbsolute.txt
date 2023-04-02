@@ -1,0 +1,17 @@
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/bin/Debug/net7.0/Todo.Infrastructure.deps.json
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/bin/Debug/net7.0/Todo.Infrastructure.runtimeconfig.json
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/bin/Debug/net7.0/Todo.Infrastructure.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/bin/Debug/net7.0/Todo.Infrastructure.pdb
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/bin/Debug/net7.0/Todo.Domain.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/bin/Debug/net7.0/Todo.Domain.pdb
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.csproj.AssemblyReference.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.AssemblyInfoInputs.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.AssemblyInfo.cs
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.csproj.CoreCompileInputs.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.csproj.CopyComplete
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/refint/Todo.Infrastructure.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.pdb
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/Todo.Infrastructure.genruntimeconfig.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.Infrastructure/obj/Debug/net7.0/ref/Todo.Infrastructure.dll

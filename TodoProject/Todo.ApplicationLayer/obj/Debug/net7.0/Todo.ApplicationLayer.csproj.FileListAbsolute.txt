@@ -1,0 +1,15 @@
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/bin/Debug/net7.0/Todo.ApplicationLayer.deps.json
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/bin/Debug/net7.0/Todo.ApplicationLayer.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/bin/Debug/net7.0/Todo.ApplicationLayer.pdb
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/bin/Debug/net7.0/Todo.Domain.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/bin/Debug/net7.0/Todo.Domain.pdb
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.csproj.AssemblyReference.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.GeneratedMSBuildEditorConfig.editorconfig
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.AssemblyInfoInputs.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.AssemblyInfo.cs
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.csproj.CoreCompileInputs.cache
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.csproj.CopyComplete
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/refint/Todo.ApplicationLayer.dll
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/Todo.ApplicationLayer.pdb
+/Users/dsvolodin/Projects/TodoProject/Todo.ApplicationLayer/obj/Debug/net7.0/ref/Todo.ApplicationLayer.dll

@@ -1,0 +1,47 @@
+﻿<Properties StartupConfiguration="{50BD8C6E-7E79-4221-A371-2C662FF1D9B1}|https">
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.Todo.API PreferredExecutionTarget="/Applications/Safari.app" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Todo.Infrastructure/Todo.Infrastructure.csproj">
+    <Files>
+      <File FileName="Todo.API/Program.cs" Line="7" Column="63" />
+      <File FileName="Todo.API/appsettings.json" Line="10" Column="20" />
+      <File FileName="Todo.API/TodoItem.cs" Line="16" Column="50" />
+      <File FileName="Todo.API/TodoComment.cs" Line="4" Column="32" />
+      <File FileName="Todo.API/ToDoDbContext.cs" Line="6" Column="42" />
+      <File FileName="Todo.API/Properties/launchSettings.json" Line="23" Column="6" />
+      <File FileName="../../.microsoft/usersecrets/701fa598-c838-42cd-980a-bad172699ad5/secrets.json" Line="1" Column="1" />
+      <File FileName="Todo.Infrastructure/DependencyInjection.cs" Line="21" Column="2" />
+      <File FileName="Todo.ApplicationLayer/Repositories/ITodoRepository.cs" Line="13" Column="6" />
+      <File FileName="Todo.ApplicationLayer/Repositories/ITodoCommentRepository.cs" Line="10" Column="6" />
+      <File FileName="Todo.Infrastructure/Todo.Infrastructure.csproj" Line="1" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="TodoProject" expanded="True">
+            <Node name="Todo.API" expanded="True">
+              <Node name="Dependencies" expanded="True">
+                <Node name="PackageDependencies" expanded="True" />
+              </Node>
+              <Node name="Properties" expanded="True" />
+            </Node>
+            <Node name="Todo.ApplicationLayer" expanded="True">
+              <Node name="Repositories" expanded="True" />
+            </Node>
+            <Node name="Todo.Domain" expanded="True">
+              <Node name="Entities" expanded="True" />
+            </Node>
+            <Node name="Todo.Infrastructure" expanded="True">
+              <Node name="Persistance" expanded="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
