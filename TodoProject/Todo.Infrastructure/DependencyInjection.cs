@@ -1,7 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using Todo.ApplicationLayer.Repositories;
 using Todo.Infrastructure.Persistance;
+using Todo.Infrastructure.Repositories;
 
 namespace Todo.Infrastructure
 {
@@ -12,10 +14,14 @@ namespace Todo.Infrastructure
             ConfigurationManager configuration
         )
         {
-            return services.AddDbContext<ToDoDbContext>(options =>
+            services.AddDbContext<ToDoDbContext>(options =>
             {
                 options.UseNpgsql(configuration.GetConnectionString("PostgreSQL"));
             });
+            services.AddScoped<ITodoRepository, TodoRepository>();
+            services.AddScoped<ITodoCommentRepository, TodoCommentRepository>();
+
+            return services;
         }
     }
 }

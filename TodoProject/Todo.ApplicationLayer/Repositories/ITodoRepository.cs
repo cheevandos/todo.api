@@ -1,14 +1,13 @@
-﻿using System;
-using Todo.Domain.Entities;
+﻿using Todo.Domain.Entities;
 
 namespace Todo.ApplicationLayer.Repositories
 {
     public interface ITodoRepository
     {
-        IEnumerable<TodoItem> GetAllTodoItems();
-        void Add(TodoItem todoItem);
-        TodoItem GetTodoItem(long todoItemId);
-        void Delete(long todoItemId);
-        void Update(TodoItem todoItem);
+        Task<IEnumerable<TodoItem>> GetAllTodoItems();
+        Task Add(TodoItem todoItem);
+        Task<TodoItem> GetTodoItem(long todoItemId);
+        Task Delete(long todoItemId);
+        Task Update(TodoItem todoItem);
     }
 }

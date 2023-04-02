@@ -15,8 +15,6 @@ VALUES
     'red'
 );
 
-SELECT * FROM public."TodoComment"
-
 INSERT INTO public."TodoComment"
 (
     content,
