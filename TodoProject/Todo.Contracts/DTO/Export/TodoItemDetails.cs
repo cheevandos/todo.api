@@ -1,5 +1,4 @@
-﻿using System;
-namespace Todo.Contracts.DTO.Export
+﻿namespace Todo.Contracts.DTO.Export
 {
     public record TodoItemDetails(
         long TodoId,
@@ -12,4 +11,3 @@ namespace Todo.Contracts.DTO.Export
         List<TodoCommentDetails> Comments
     );
 }
-

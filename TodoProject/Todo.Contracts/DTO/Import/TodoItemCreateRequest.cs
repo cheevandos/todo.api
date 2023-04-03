@@ -1,5 +1,4 @@
-﻿using System;
-namespace Todo.Contracts.DTO.Import
+﻿namespace Todo.Contracts.DTO.Import
 {
     public record TodoItemCreateRequest(
         string Title,
