@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Infrastructure", "Todo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.ApplicationLayer", "Todo.ApplicationLayer\Todo.ApplicationLayer.csproj", "{5AD636C1-99FD-4707-B7DD-E8CB4DB580A5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Todo.Contracts", "Todo.Contracts\Todo.Contracts.csproj", "{8DC3BF94-68AB-499E-908B-9F5A79DED4C8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{5AD636C1-99FD-4707-B7DD-E8CB4DB580A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AD636C1-99FD-4707-B7DD-E8CB4DB580A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AD636C1-99FD-4707-B7DD-E8CB4DB580A5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DC3BF94-68AB-499E-908B-9F5A79DED4C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DC3BF94-68AB-499E-908B-9F5A79DED4C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DC3BF94-68AB-499E-908B-9F5A79DED4C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DC3BF94-68AB-499E-908B-9F5A79DED4C8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -18,5 +18,14 @@
     <ProjectReference Include="..\Todo.Infrastructure\Todo.Infrastructure.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
+    <ProjectReference Include="..\Todo.ApplicationLayer\Todo.ApplicationLayer.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Remove="RouteGroups\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="RouteGroups\" />
   </ItemGroup>
 </Project>
