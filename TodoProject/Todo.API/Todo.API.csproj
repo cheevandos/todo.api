@@ -11,7 +11,7 @@
   <PropertyGroup Condition=" '$(RunConfiguration)' == 'http' " />
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="7.0.4" />
-    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -24,8 +24,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="RouteGroups\" />
+    <None Remove="ErrorHandling\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="RouteGroups\" />
+    <Folder Include="ErrorHandling\" />
   </ItemGroup>
 </Project>

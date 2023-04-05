@@ -8,15 +8,13 @@ namespace Todo.ApplicationLayer.Services.Mapping
 {
     public class TodoProfile : Profile
     {
-        public TodoProfile(IHasher hasher)
+        public TodoProfile()
         {
             CreateMap<TodoItemCreateRequest, TodoItem>();
 
+            CreateMap<TodoItemUpdateRequest, TodoItem>();
+
             CreateMap<TodoItem, TodoItemDetails>()
-                .ForMember(
-                    dest => dest.Hash,
-                    options => options.MapFrom(src => hasher.HashString(src.Title))
-                )
                 .ForMember(
                     dest => dest.Comments,
                     options => options.MapFrom(src =>
@@ -27,6 +25,7 @@ namespace Todo.ApplicationLayer.Services.Mapping
                         )
                     )
                 );
+                //.AfterMap<HashTodoTitle>();
         }
     }
 }

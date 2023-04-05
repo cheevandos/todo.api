@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
+using Todo.ApplicationLayer.Services.Hashing;
 
 namespace Todo.ApplicationLayer
 {
@@ -7,6 +8,7 @@ namespace Todo.ApplicationLayer
         public static IServiceCollection AddApplicationServices(this IServiceCollection services)
         {
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+            services.AddScoped<IHasher, MD5Hasher>();
             return services;
         }
     }

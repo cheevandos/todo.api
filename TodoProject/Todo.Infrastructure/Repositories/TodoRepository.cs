@@ -38,6 +38,7 @@ namespace Todo.Infrastructure.Repositories
                 throw new Exception("Todo item not found");
             }
             context.TodoItems.Remove(item);
+            await context.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<TodoItem>> GetAllTodoItems()

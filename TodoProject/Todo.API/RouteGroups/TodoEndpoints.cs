@@ -11,9 +11,25 @@ namespace Todo.API.RouteGroups
     {
         public static RouteGroupBuilder AddTodoEndpoints(this RouteGroupBuilder builder)
         {
-            builder.MapGet("/todos/all", GetAllTodoItems)
+            builder.MapGet("/", GetAllTodoItems)
                 .WithName("Get all todo's")
-                .WithTags("Getters");
+                .WithTags("Read");
+
+            builder.MapGet("/{todoItemId}", GetTodoItem)
+                .WithName("Get concrete todo item")
+                .WithTags("Read");
+
+            builder.MapPost("/add", AddTodoItem)
+                .WithName("Add new todo")
+                .WithTags("Create");
+
+            builder.MapDelete("/{todoItemId}", DeleteTodoItem)
+                .WithName("Delete todo item with comments")
+                .WithTags("Delete");
+
+            builder.MapPatch("/{todoItemId}", UpdateTodoItem)
+                .WithName("Update todo title")
+                .WithTags("Update");
 
             return builder;
         }
@@ -47,6 +63,66 @@ namespace Todo.API.RouteGroups
                 TodoItem newTodo = mapper.Map<TodoItem>(createRequest);
                 await todoRepository.Add(newTodo);
                 return Results.Created($"/todos/{newTodo.TodoId}", newTodo);
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem(
+                    detail: ex.Message,
+                    statusCode: StatusCodes.Status500InternalServerError
+                );
+            }
+        }
+
+        public static async Task<IResult> DeleteTodoItem(
+            long todoItemId,
+            ITodoRepository todoRepository
+        )
+        {
+            try
+            {
+                await todoRepository.Delete(todoItemId);
+                return Results.NoContent();
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem(
+                    detail: ex.Message,
+                    statusCode: StatusCodes.Status500InternalServerError
+                );
+            }
+        }
+
+        public static async Task<IResult> GetTodoItem(
+            long todoItemId,
+            ITodoRepository todoRepository
+        )
+        {
+            try
+            {
+                await todoRepository.GetTodoItem(todoItemId);
+                return Results.NoContent();
+            }
+            catch (Exception ex)
+            {
+                return Results.Problem(
+                    detail: ex.Message,
+                    statusCode: StatusCodes.Status500InternalServerError
+                );
+            }
+        }
+
+        public static async Task<IResult> UpdateTodoItem(
+            [FromBody] TodoItemUpdateRequest updateRequest,
+            ITodoRepository todoRepository,
+            IMapper mapper
+        )
+        {
+            try
+            {
+                await todoRepository.Update(
+                    mapper.Map<TodoItemUpdateRequest, TodoItem>(updateRequest)
+                );
+                return Results.Ok(updateRequest);
             }
             catch (Exception ex)
             {
