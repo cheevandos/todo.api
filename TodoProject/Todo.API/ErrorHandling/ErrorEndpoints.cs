@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Diagnostics;
+using System;
 namespace Todo.API.ErrorHandling
 {
     public static class ExceptionHandling
@@ -10,8 +11,18 @@ namespace Todo.API.ErrorHandling
 
         private static async Task Problem(HttpContext context)
         {
+            IExceptionHandlerFeature? exceptionHandler = context.Features.Get<IExceptionHandlerFeature>();
+
+            if (exceptionHandler is null)
+            {
+                await Results.Problem(
+                    detail: "Internal server error",
+                    statusCode: StatusCodes.Status500InternalServerError
+                ).ExecuteAsync(context);
+            }
+
             await Results.Problem(
-                detail: "Internal server error",
+                detail: exceptionHandler?.Error.Message,
                 statusCode: StatusCodes.Status500InternalServerError
             ).ExecuteAsync(context);
         }

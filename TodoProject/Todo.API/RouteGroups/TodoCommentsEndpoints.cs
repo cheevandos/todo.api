@@ -28,22 +28,12 @@ namespace Todo.API.RouteGroups
             IMapper mapper
         )
         {
-            try
-            {
-                TodoComment newComment = mapper.Map<TodoComment>(commentCreateRequest);
-                await todoCommentRepository.Add(newComment);
-                return Results.Created(
-                    $"/todos/{newComment.TodoItemId}/comments/{newComment.CommentId}",
-                    newComment
-                );
-            }
-            catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            TodoComment newComment = mapper.Map<TodoComment>(commentCreateRequest);
+            await todoCommentRepository.Add(newComment);
+            return Results.Created(
+                $"/todos/{newComment.TodoItemId}/comments/{newComment.CommentId}",
+                newComment
+            );
         }
 
         public static async Task<IResult> GetTodoComments(
@@ -52,19 +42,9 @@ namespace Todo.API.RouteGroups
             IMapper mapper
         )
         {
-            try
-            {
-                IEnumerable<TodoComment> comments =
-                    await todoCommentRepository.GetTodoItemComments(todoItemId);
-                return Results.Ok(mapper.Map<IEnumerable<TodoCommentDetails>>(comments));
-            }
-            catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            IEnumerable<TodoComment> comments =
+                await todoCommentRepository.GetTodoItemComments(todoItemId);
+            return Results.Ok(mapper.Map<IEnumerable<TodoCommentDetails>>(comments));
         }
     }
 }

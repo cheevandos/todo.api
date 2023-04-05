@@ -1,7 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Todo.Domain.Entities;
+using Todo.Domain.Enums;
 
 namespace Todo.Infrastructure.Persistance;
 
@@ -39,6 +39,9 @@ public partial class ToDoDbContext : DbContext
                 .HasConstraintName("fk_todoitem_ID");
         });
 
+        EnumToStringConverter<TodoCategory> todoCategoryConverter = new();
+        EnumToStringConverter<TodoColor> todoColorConverter = new();
+
         modelBuilder.Entity<TodoItem>(entity =>
         {
             entity.HasKey(e => e.TodoId).HasName("TodoItem_pkey");
@@ -50,8 +53,11 @@ public partial class ToDoDbContext : DbContext
             entity.Property(e => e.TodoId)
                 .UseIdentityAlwaysColumn()
                 .HasColumnName("todo_ID");
-            entity.Property(e => e.Category).HasColumnName("category");
-            entity.Property(e => e.Color).HasColumnName("color");
+            entity.Property(e => e.Category)
+                .HasColumnName("category")
+                .HasConversion(todoCategoryConverter);
+            entity.Property(e => e.Color).HasColumnName("color")
+                .HasConversion(todoColorConverter);
             entity.Property(e => e.CreateAt).HasColumnName("create_at");
             entity.Property(e => e.IsCompleted).HasColumnName("is_completed");
             entity.Property(e => e.Title).HasColumnName("title");

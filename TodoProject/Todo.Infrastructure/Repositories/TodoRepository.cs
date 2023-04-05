@@ -23,7 +23,7 @@ namespace Todo.Infrastructure.Repositories
             {
                 throw new Exception("Todo with same title and category already exists");
             }
-
+            todoItem.CreateAt = DateTime.UtcNow;
             await context.TodoItems.AddAsync(todoItem);
             await context.SaveChangesAsync();
         }

@@ -39,17 +39,8 @@ namespace Todo.API.RouteGroups
             IMapper mapper
         )
         {
-            try
-            {
-                IEnumerable<TodoItem> todoItems = await todoRepository.GetAllTodoItems();
-                return Results.Ok(mapper.Map<IEnumerable<TodoItemDetails>>(todoItems));
-            } catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            IEnumerable<TodoItem> todoItems = await todoRepository.GetAllTodoItems();
+            return Results.Ok(mapper.Map<IEnumerable<TodoItemDetails>>(todoItems));
         }
 
         public static async Task<IResult> AddTodoItem(
@@ -58,19 +49,9 @@ namespace Todo.API.RouteGroups
             IMapper mapper
         )
         {
-            try
-            {
-                TodoItem newTodo = mapper.Map<TodoItem>(createRequest);
-                await todoRepository.Add(newTodo);
-                return Results.Created($"/todos/{newTodo.TodoId}", newTodo);
-            }
-            catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            TodoItem newTodo = mapper.Map<TodoItem>(createRequest);
+            await todoRepository.Add(newTodo);
+            return Results.Created($"/todos/{newTodo.TodoId}", newTodo);
         }
 
         public static async Task<IResult> DeleteTodoItem(
@@ -78,18 +59,8 @@ namespace Todo.API.RouteGroups
             ITodoRepository todoRepository
         )
         {
-            try
-            {
-                await todoRepository.Delete(todoItemId);
-                return Results.NoContent();
-            }
-            catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            await todoRepository.Delete(todoItemId);
+            return Results.NoContent();
         }
 
         public static async Task<IResult> GetTodoItem(
@@ -98,18 +69,8 @@ namespace Todo.API.RouteGroups
             IMapper mapper
         )
         {
-            try
-            {
-                TodoItem todoItem = await todoRepository.GetTodoItem(todoItemId);
-                return Results.Ok(mapper.Map<TodoItemDetails>(todoItem));
-            }
-            catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            TodoItem todoItem = await todoRepository.GetTodoItem(todoItemId);
+            return Results.Ok(mapper.Map<TodoItemDetails>(todoItem));
         }
 
         public static async Task<IResult> UpdateTodoItem(
@@ -118,18 +79,8 @@ namespace Todo.API.RouteGroups
             IMapper mapper
         )
         {
-            try
-            {
-                await todoRepository.Update(mapper.Map<TodoItem>(updateRequest));
-                return Results.Ok(updateRequest);
-            }
-            catch (Exception ex)
-            {
-                return Results.Problem(
-                    detail: ex.Message,
-                    statusCode: StatusCodes.Status500InternalServerError
-                );
-            }
+            await todoRepository.Update(mapper.Map<TodoItem>(updateRequest));
+            return Results.Ok(updateRequest);
         }
     }
 }
