@@ -31,8 +31,8 @@ namespace Todo.API.RouteGroups
             TodoComment newComment = mapper.Map<TodoComment>(commentCreateRequest);
             await todoCommentRepository.Add(newComment);
             return Results.Created(
-                $"/todos/{newComment.TodoItemId}/comments/{newComment.CommentId}",
-                newComment
+                $"todos/comments/{newComment.TodoItemId}",
+                mapper.Map<TodoCommentDetails>(newComment)
             );
         }
 

@@ -21,3 +21,14 @@ CREATE TABLE IF NOT EXISTS public."TodoComment"
         ON UPDATE NO ACTION
         ON DELETE CASCADE
 )
+
+CREATE TABLE IF NOT EXISTS public."HttpLog"
+(
+    "LogID" bigint NOT NULL GENERATED ALWAYS AS IDENTITY ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 9223372036854775807 CACHE 1 ),
+    "ApplicationName" text COLLATE pg_catalog."default",
+    "LogDate" time with time zone NOT NULL,
+    "LogLevel" text COLLATE pg_catalog."default" NOT NULL,
+    "LogMessage" text COLLATE pg_catalog."default" NOT NULL,
+    "LoggerType" text COLLATE pg_catalog."default",
+    CONSTRAINT "HttpLogs_pkey" PRIMARY KEY ("LogID")
+)

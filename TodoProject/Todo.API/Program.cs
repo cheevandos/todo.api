@@ -1,11 +1,11 @@
-﻿using Todo.Infrastructure;
-using Todo.ApplicationLayer;
-using Microsoft.AspNetCore.HttpLogging;
+﻿using Todo.API.ErrorHandling;
 using Todo.API.RouteGroups;
-using Todo.API.ErrorHandling;
+using Todo.ApplicationLayer;
+using Todo.Infrastructure;
 
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 {
+    builder.UseLogging();
     builder.Services.AddEndpointsApiExplorer();
     builder.Services.AddSwaggerGen();
     builder.Services.AddInfrastructure(builder.Configuration);
@@ -19,8 +19,8 @@ WebApplication app = builder.Build();
         app.UseSwagger();
         app.UseSwaggerUI();
     }
-    app.UseExceptionHandler(ExceptionHandling.HandleApplicationException);
     app.UseHttpLogging();
+    app.UseExceptionHandler(ExceptionHandling.HandleApplicationException);
     app.UseHttpsRedirection();
     app.MapGroup("/todos").AddTodoEndpoints();
     app.MapGroup("todos/comments").AddTodoCommentsEndpoints();
