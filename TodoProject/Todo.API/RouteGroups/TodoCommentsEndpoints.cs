@@ -1,11 +1,9 @@
-﻿using System;
-using AutoMapper;
+﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using Todo.ApplicationLayer.Repositories;
 using Todo.Contracts.DTO.Export;
 using Todo.Contracts.DTO.Import;
 using Todo.Domain.Entities;
-using Todo.Infrastructure.Repositories;
 
 namespace Todo.API.RouteGroups
 {
@@ -32,11 +30,7 @@ namespace Todo.API.RouteGroups
         {
             try
             {
-                TodoComment newComment =
-                    mapper.Map<TodoCommentCreateRequest, TodoComment>(
-                        commentCreateRequest
-                    );
-
+                TodoComment newComment = mapper.Map<TodoComment>(commentCreateRequest);
                 await todoCommentRepository.Add(newComment);
                 return Results.Created(
                     $"/todos/{newComment.TodoItemId}/comments/{newComment.CommentId}",
@@ -62,10 +56,7 @@ namespace Todo.API.RouteGroups
             {
                 IEnumerable<TodoComment> comments =
                     await todoCommentRepository.GetTodoItemComments(todoItemId);
-
-                return Results.Ok(
-                    mapper.Map<IEnumerable<TodoComment>, IEnumerable<TodoCommentDetails>>(comments)
-                );
+                return Results.Ok(mapper.Map<IEnumerable<TodoCommentDetails>>(comments));
             }
             catch (Exception ex)
             {

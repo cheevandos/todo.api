@@ -54,6 +54,7 @@ namespace Todo.Infrastructure.Repositories
         {
             if (await context.TodoItems
                 .AsNoTracking()
+                .Include(item => item.TodoComments)
                 .SingleOrDefaultAsync(item => item.TodoId == todoItemId)
                 is not TodoItem item
             )

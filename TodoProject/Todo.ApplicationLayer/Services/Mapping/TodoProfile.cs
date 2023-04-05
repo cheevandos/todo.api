@@ -24,8 +24,8 @@ namespace Todo.ApplicationLayer.Services.Mapping
                             new TodoCommentDetails(comment.CommentId, comment.Content)
                         )
                     )
-                );
-                //.AfterMap<HashTodoTitle>();
+                )
+                .AfterMap<HashTodoTitle>();
         }
     }
 }

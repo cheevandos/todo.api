@@ -42,7 +42,7 @@ namespace Todo.API.RouteGroups
             try
             {
                 IEnumerable<TodoItem> todoItems = await todoRepository.GetAllTodoItems();
-                return Results.Ok(mapper.Map<TodoItemDetails>(todoItems));
+                return Results.Ok(mapper.Map<IEnumerable<TodoItemDetails>>(todoItems));
             } catch (Exception ex)
             {
                 return Results.Problem(
@@ -94,13 +94,14 @@ namespace Todo.API.RouteGroups
 
         public static async Task<IResult> GetTodoItem(
             long todoItemId,
-            ITodoRepository todoRepository
+            ITodoRepository todoRepository,
+            IMapper mapper
         )
         {
             try
             {
-                await todoRepository.GetTodoItem(todoItemId);
-                return Results.NoContent();
+                TodoItem todoItem = await todoRepository.GetTodoItem(todoItemId);
+                return Results.Ok(mapper.Map<TodoItemDetails>(todoItem));
             }
             catch (Exception ex)
             {
@@ -119,9 +120,7 @@ namespace Todo.API.RouteGroups
         {
             try
             {
-                await todoRepository.Update(
-                    mapper.Map<TodoItemUpdateRequest, TodoItem>(updateRequest)
-                );
+                await todoRepository.Update(mapper.Map<TodoItem>(updateRequest));
                 return Results.Ok(updateRequest);
             }
             catch (Exception ex)
